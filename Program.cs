@@ -1,13 +1,12 @@
-﻿using System.Text;
-using DesafioProjetoHospedagem.Models;
+﻿using DesafioProjetoHospedagem.Models;
 
-Console.OutputEncoding = Encoding.UTF8;
+
 
 // Cria os modelos de hóspedes e cadastra na lista de hóspedes
 List<Pessoa> hospedes = new List<Pessoa>();
 
-Pessoa p1 = new Pessoa(nome: "Hóspede 1");
-Pessoa p2 = new Pessoa(nome: "Hóspede 2");
+Pessoa p1 = new Pessoa(nome:"Luiz", sobrenome:"Ricardo");
+Pessoa p2 = new Pessoa("Maria", "Eduarda");
 
 hospedes.Add(p1);
 hospedes.Add(p2);
@@ -23,3 +22,12 @@ reserva.CadastrarHospedes(hospedes);
 // Exibe a quantidade de hóspedes e o valor da diária
 Console.WriteLine($"Hóspedes: {reserva.ObterQuantidadeHospedes()}");
 Console.WriteLine($"Valor diária: {reserva.CalcularValorDiaria()}");
+
+foreach(var rolar in hospedes){
+    Console.WriteLine($"{rolar.NomeCompleto}");
+}
+
+// foreach (var hospede in hospedes)
+//             {
+//                 Console.WriteLine($"Nome completo: {hospede.NomeCompleto}");
+//             }
